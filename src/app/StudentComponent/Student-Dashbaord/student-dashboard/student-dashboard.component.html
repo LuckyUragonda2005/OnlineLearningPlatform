@@ -1,0 +1,51 @@
+<div class="student-dashboard-container">
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="sidebar-header">👋 {{ studentName }}</div>    <nav>
+      <a routerLink="/student/dashboard" routerLinkActive="active-link">📊 Dashboard</a>
+      <a routerLink="/StudentCourse" routerLinkActive="active-link">📚 My Courses</a>
+      <a routerLink="/StudentAssignment" routerLinkActive="active-link">📝 Assignments</a>
+      <a routerLink="/StudnetHomeWork" routerLinkActive="active-link">📌 Homework</a>
+      <a routerLink="/student/result" routerLinkActive="active-link">🏆 Result</a>
+      <a routerLink="/Char-Box" routerLinkActive="active-link">💬 Chat Box</a>
+      <a routerLink="/student/settings" routerLinkActive="active-link">⚙️ Settings</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="topbar">
+      <h1>Welcome Back, Lucky Uragonda 👋</h1>
+      <div class="topbar-right">
+        <button class="logout-btn" (click)="logout()">Logout</button>
+      </div>
+    </header>
+
+    <!-- Dashboard Cards -->
+    <section class="dashboard-cards">
+      <div class="card course-card">
+        <h2>📚 Enrolled Courses</h2>
+        <p>{{ enrolledCourses }}</p>
+        <button (click)="goToCourses()">View Courses</button>
+      </div>
+
+      <div class="card assignments-card">
+        <h2>📝 Pending Assignments</h2>
+        <p>{{ pendingAssignments }}</p>
+        <button (click)="goToAssignments()">View Assignments</button>
+      </div>
+
+      <div class="card progress-card">
+        <h2>📈 Progress</h2>
+        <p>{{ overallProgress }}%</p>
+        <button (click)="goToProgress()">Track Progress</button>
+      </div>
+
+      <div class="card feedback-card">
+        <h2>💬 Feedback</h2>
+        <p>{{ feedbackCount }} Received</p>
+        <button (click)="goToFeedback()">Check Feedback</button>
+      </div>
+    </section>
+  </main>
+</div>

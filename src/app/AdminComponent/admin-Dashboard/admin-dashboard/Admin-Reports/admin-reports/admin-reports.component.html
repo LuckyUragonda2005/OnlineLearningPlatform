@@ -1,0 +1,24 @@
+<div class="reports-container">
+  <h2>Admin Reports</h2>
+
+  <div class="filters">
+    <label for="reportType">Filter by:</label>
+    <select [(ngModel)]="selectedReportType">
+      <option value="">All</option>
+      <option value="user">User Reports</option>
+      <option value="course">Course Reports</option>
+      <option value="revenue">Revenue Reports</option>
+      <option value="activity">Activity Logs</option>
+      <option value="performance">Performance Metrics</option>
+    </select>
+  </div>
+
+  <div class="report-cards">
+    <div class="report-box" *ngFor="let report of filteredReports">
+      <h3>{{ report.title }}</h3>
+      <p>{{ report.description }}</p>
+      <p><strong>Date:</strong> {{ report.date }}</p>
+      <button (click)="viewReport(report)">View Details</button>
+    </div>
+  </div>
+</div>

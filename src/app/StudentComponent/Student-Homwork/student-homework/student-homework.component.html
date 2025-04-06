@@ -1,0 +1,28 @@
+<div class="homework-container">
+  <h2>📘 Your Homework</h2>
+  <p class="subtitle">Stay focused and finish your homework on time!</p>
+
+  <div class="homework-grid">
+    <div *ngFor="let task of homeworkList" class="homework-card" [ngClass]="task.status.toLowerCase()">
+      <div class="homework-header">
+        <h3>{{ task.title }}</h3>
+        <span class="subject">{{ task.subject }}</span>
+      </div>
+
+      <p class="description">{{ task.description }}</p>
+
+      <div class="meta">
+        <span class="due">Due: {{ task.dueDate | date:'mediumDate' }}</span>
+        <span class="status-badge">{{ task.status }}</span>
+      </div>
+
+      <div class="actions" *ngIf="task.status === 'Pending'">
+        <button (click)="markAsDone(task)">Mark as Done</button>
+      </div>
+
+      <div class="done-message" *ngIf="task.status === 'Done'">
+        ✅ Well Done!
+      </div>
+    </div>
+  </div>
+</div>

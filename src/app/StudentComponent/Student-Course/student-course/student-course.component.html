@@ -1,0 +1,25 @@
+<div class="student-course-container">
+  <h2>Explore Your Courses</h2>
+  <p class="subtitle">Find something interesting and continue learning.</p>
+
+  <div class="course-grid">
+    <div *ngFor="let course of courses" class="course-card">
+      <img [src]="course.thumbnail" alt="Course Thumbnail" />
+
+      <div class="card-content">
+        <div class="card-header">
+          <h3>{{ course.title }}</h3>
+          <span class="badge">{{ course.category }}</span>
+        </div>
+
+        <p class="description">{{ course.description }}</p>
+
+        <div class="card-footer">
+          <button (click)="startCourse(course)">
+            {{ course.isStarted ? 'Continue' : 'Start' }} Learning
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

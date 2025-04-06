@@ -1,0 +1,20 @@
+<div class="view-assignments-container">
+  <h2>All Assignments</h2>
+
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search by title or subject..." />
+  </div>
+
+  <div class="assignments-grid">
+    <div class="assignment-card" *ngFor="let assignment of filteredAssignments()">
+      <h3>{{ assignment.title }}</h3>
+      <p><strong>Subject:</strong> {{ assignment.subject }}</p>
+      <p><strong>Due Date:</strong> {{ assignment.dueDate }}</p>
+      <p><strong>Status:</strong> {{ assignment.status }}</p>
+      <div class="action-buttons">
+        <button class="view-btn" (click)="viewDetails(assignment)"  routerLink="viewAssignments" routerLinkActive="active-link">View</button>
+        <button class="delete-btn" (click)="deleteAssignment(assignment)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

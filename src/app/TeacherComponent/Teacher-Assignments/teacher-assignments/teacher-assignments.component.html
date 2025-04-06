@@ -1,0 +1,21 @@
+<div class="assignment-management-container">
+  <h2>Assignment Management</h2>
+
+  <div class="card-grid">
+    <!-- Add Assignment Card -->
+    <div class="assignment-card" (click)="goToAdd()">
+      <div class="icon-box"><i class="fas fa-plus-circle"></i></div>
+      <h3>Add Assignment</h3>
+      <p>Create and assign new tasks to students.</p>
+      <button routerLink="/addAssignments" routerLinkActive="active-link">Add</button>
+    </div>
+
+    <!-- Get Assignment Card -->
+    <div class="assignment-card" (click)="goToList()">
+      <div class="icon-box"><i class="fas fa-tasks"></i></div>
+      <h3>View Assignments</h3>
+      <p>Browse or manage previously created assignments.</p>
+      <button>View</button>
+    </div>
+  </div>
+</div>

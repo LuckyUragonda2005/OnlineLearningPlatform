@@ -1,0 +1,85 @@
+<div class="course-container">
+  <h2>Manage Courses</h2>
+
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Search by title, instructor or topic"
+    />
+    <button (click)="openAddCourse()">Add Course</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Instructor</th>
+        <th>Duration</th>
+        <th>Topic</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr> 
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of filteredCourses()">
+        <td>{{ course.title }}</td>
+        <td>{{ course.instructor }}</td>
+        <td>{{ course.duration }}</td>
+        <td>{{ course.topic }}</td>
+        <td>{{ course.approved ? 'Approved' : 'Pending' }}</td>
+        <td>
+          <button (click)="editCourse(course)">Edit</button>
+          <button (click)="deleteCourse(course)">Delete</button>
+          <ng-container *ngIf="!course.approved">
+            <button (click)="approveCourse(course)">Approve</button>
+            <button (click)="rejectCourse(course)">Reject</button>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Add/Edit Form -->
+  <div *ngIf="showForm" class="form-section">
+    <h3>{{ isEdit ? 'Edit Course' : 'Add Course' }}</h3>
+    <form (ngSubmit)="saveCourse()">
+      <label>Title:</label>
+      <input
+        type="text"
+        [(ngModel)]="selectedCourse.title"
+        name="title"
+        required
+      />
+
+      <label>Instructor:</label>
+      <input
+        type="text"
+        [(ngModel)]="selectedCourse.instructor"
+        name="instructor"
+        required
+      />
+
+      <label>Duration (hrs):</label>
+      <input
+        type="number"
+        [(ngModel)]="selectedCourse.duration"
+        name="duration"
+        required
+      />
+
+      <label>Topic:</label>
+      <input
+        type="text"
+        [(ngModel)]="selectedCourse.topic"
+        name="topic"
+        required
+      />
+
+      <button type="submit">
+        {{ isEdit ? 'Update' : 'Add' }}
+      </button>
+      <button type="button" (click)="cancel()">Cancel</button>
+    </form>
+  </div>
+</div>

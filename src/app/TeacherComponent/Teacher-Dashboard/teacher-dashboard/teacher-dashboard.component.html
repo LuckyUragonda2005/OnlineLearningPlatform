@@ -1,0 +1,53 @@
+<div class="dashboard-container">
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="sidebar-header">Teacher Panel</div>
+    <nav>
+      <a routerLink="/teacherdashboard" routerLinkActive="active-link">Dashboard</a>
+      <a routerLink="/teacherCourse" routerLinkActive="active-link">My Courses</a>
+      <a routerLink="/gd" routerLinkActive="active-link">Schedule</a>
+      <a routerLink="/fdg" routerLinkActive="active-link">Feedback</a>
+      <a routerLink="/assignment" routerLinkActive="active-link">Assinments</a>
+      <a routerLink="/dg" routerLinkActive="active-link">Student Progress</a>
+      <a routerLink="/gd" routerLinkActive="active-link">Student Results</a>
+
+
+
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <h1>Online Learning Platform</h1>
+      <div class="topbar-right">
+        <!-- <button class="profile-btn" (click)="openProfile()">
+          <img src="assets/teacher-profile.png" alt="Teacher Profile" />
+        </button> -->
+        <button class="logout-btn" (click)="logout()">Logout</button>
+      </div>
+    </header>
+
+    <!-- Dashboard Cards -->
+    <section class="dashboard-cards">
+      <div class="card courses-card">
+        <h2>Assigned Courses</h2>
+        <p>{{ assignedCourses }}</p>
+        <button (click)="viewCourses()">View Courses</button>
+      </div>
+
+      <div class="card schedule-card">
+        <h2>Upcoming Classes</h2>
+        <p>{{ upcomingClasses }}</p>
+        <button (click)="viewSchedule()">View Schedule</button>
+      </div>
+
+      <div class="card feedback-card">
+        <h2>Student Feedback</h2>
+        <p>{{ averageFeedback }}/5</p>
+        <button (click)="viewFeedback()">View Feedback</button>
+      </div>
+    </section>
+  </main>
+</div>

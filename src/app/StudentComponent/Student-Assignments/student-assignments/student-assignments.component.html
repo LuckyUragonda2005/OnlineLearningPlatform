@@ -1,0 +1,28 @@
+<div class="student-assignment-container">
+  <h2>Your Assignments</h2>
+  <p class="subtitle">Track your tasks and stay on top of deadlines.</p>
+
+  <div class="assignment-grid">
+    <div *ngFor="let assignment of assignments" class="assignment-card">
+      <div class="card-header">
+        <h3>{{ assignment.title }}</h3>
+        <span [ngClass]="getStatusClass(assignment.status)" class="status">
+          {{ assignment.status }}
+        </span>
+      </div>
+
+      <p class="description">{{ assignment.description }}</p>
+
+      <div class="meta">
+        <span class="due">Due: {{ assignment.dueDate | date: 'mediumDate' }}</span>
+        <span class="course">Course: {{ assignment.course }}</span>
+      </div>
+
+      <div class="actions">
+        <button (click)="viewAssignment(assignment)">
+          {{ assignment.status === 'Submitted' ? 'View Submission' : 'Submit Now' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+
+
+
+<div class="dashboard-container">
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="sidebar-header">Admin Panel</div>
+    <nav>
+      <a href="/admindashboard">Dashboard</a>
+      <a href="/adminManageUser">Manage Users</a>
+      <a href="/adminManageCourse">Manage Courses</a>
+      <a href="/reports">Reports</a>
+      <a href="/settings">Settings</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <h1>Online Learning Platform</h1>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </header>
+
+    <!-- Dashboard Cards -->
+    <section class="dashboard-cards">
+      <div class="card user-card">
+        <h2>Total Users</h2>
+        <p>1,204</p>
+        <button (click)="navigateTo('adminManageUser')">View Users</button>
+      </div>
+
+      <div class="card course-card">
+        <h2>Total Courses</h2>
+        <p>83</p>
+        <button (click)="navigateTo('adminManageCourse')">View Courses</button>
+      </div>
+
+      <div class="card revenue-card">
+        <h2>Revenue</h2>
+        <p>₹45,000</p>
+        <button (click)="navigateTo('reports')">View Reports</button>
+      </div>
+
+      <div class="card enroll-card">
+        <h2>New Enrollments</h2>
+        <p>100</p>
+        <button>See Details</button>
+      </div>
+
+    </section>
+  </main>
+</div>

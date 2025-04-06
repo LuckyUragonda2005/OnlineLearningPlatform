@@ -1,0 +1,52 @@
+<div class="settings-container">
+  <h2><i class="fas fa-cogs"></i> Admin Settings</h2>
+
+  <div class="settings-grid">
+
+    <div class="settings-card">
+      <i class="fas fa-user-cog icon"></i>
+      <h3>Profile</h3>
+      <p>Update your profile details</p>
+      <button (click)="editProfile()">Edit</button>
+    </div>
+
+    <div class="settings-card">
+      <i class="fas fa-key icon"></i>
+      <h3>Password</h3>
+      <p>Change your password</p>
+      <button (click)="changePassword()">Change</button>
+    </div>
+
+    <div class="settings-card">
+      <i class="fas fa-paint-brush icon"></i>
+      <h3>Theme</h3>
+      <p>Switch between light and dark mode</p>
+      <button (click)="toggleTheme()">
+        {{ settings.theme === 'dark' ? 'Light Mode' : 'Dark Mode' }}
+      </button>
+    </div>
+
+    <div class="settings-card">
+      <i class="fas fa-language icon"></i>
+      <h3>Language</h3>
+      <p>Select your preferred language</p>
+      <select [(ngModel)]="settings.language">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="es">Marathi</option>
+        <option value="eg">Gujrati</option>
+        <option value="eo">Odia</option>
+
+
+      </select>
+    </div>
+
+    <div class="settings-card danger">
+      <i class="fas fa-sign-out-alt icon"></i>
+      <h3>Logout</h3>
+      <p>Sign out of your account</p>
+      <button (click)="logout()">Logout</button>
+    </div>
+    
+  </div>
+</div>

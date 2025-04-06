@@ -1,0 +1,162 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background: #eef2f7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 220px;
+  background-color: #2d3e50;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #cfd8dc;
+  text-decoration: none;
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active-link {
+  background-color: #1a252f;
+  color: #fff;
+}
+
+/* Main content styles */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f4f6fa;
+  padding: 20px;
+}
+
+/* Top bar styles */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2196f3;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 0 0 10px 10px;
+}
+
+.topbar h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.profile-btn img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: transform 0.3s ease;
+}
+
+.profile-btn img:hover {
+  transform: scale(1.1);
+}
+
+.logout-btn {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Dashboard cards */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.card p {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.card button {
+  padding: 8px 16px;
+  background-color: #2196f3;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #0d6efd;
+}
+
+/* Specific card styling */
+.courses-card {
+  border-top: 5px solid #4caf50;
+}
+
+.schedule-card {
+  border-top: 5px solid #ff9800;
+}
+
+.feedback-card {
+  border-top: 5px solid #9c27b0;
+}

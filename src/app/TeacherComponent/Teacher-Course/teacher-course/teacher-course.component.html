@@ -1,0 +1,21 @@
+<div class="teacher-course-container">
+  <h2>Course Management</h2>
+
+  <div class="card-grid">
+    <!-- Add Course Card -->
+    <div class="course-card" (click)="goToAddCourse()">
+      <div class="icon-box"><i class="fas fa-plus-circle"></i></div>
+      <h3>Add Course</h3>
+      <p>Create and publish a new course.</p>
+      <button routerLink="/teacherCreateCourse" routerLinkActive="active-link">Add</button>
+    </div>
+
+    <!-- View Course Card -->
+    <div class="course-card" (click)="goToViewCourses()">
+      <div class="icon-box"><i class="fas fa-book-open"></i></div>
+      <h3>View Courses</h3>
+      <p>See or manage the courses you have created.</p>
+      <button routerLink="/viewCourses" routerLinkActive="active-link">View</button>
+    </div>
+  </div>
+</div>
